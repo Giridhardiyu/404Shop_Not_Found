@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404!</title>
+    <link rel="stylesheet" href="style.css" class="css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <a type="button" onclick="open_bar()" id="menu1"><i class='bx bx-menu'></i></a>
+        </div>
+        <div class="nav-logo">
+            <img src="../../Authentication/404! Shop not found-logos_transparent.png" alt="logo" class="nav-img">
+        </div>
+        <div class="nav-search">
+            <input type="search" placeholder="Search" id="h_search" name="search" class="h_search">
+            <button class="search"><i class='bx bx-search-alt-2'></i></button>
+        </div>
+        <div class="nav-profile">
+            <i class='bx bxs-bell notify'></i>
+            <img src="./profile-removebg-preview.png" alt="profile" class="pro_img">
+        </div>
+    </header>
+    <section class="home">
+        <div class="side-bar" id="s_bar">
+            <div class="catag_1">
+                <a href="#"><i class='bx bxl-product-hunt' ></i>Product Catalogue</a>
+            </div>
+            <div class="catag_1">
+                <a href="#"><i class='bx bxs-exit' ></i>Sign Out</a>
+            </div>
+        </div>
+        <div class="home-content">
+            <div class="home-img">
+                <h1>#Let's Order</h1>
+            </div>
+            <div class="home-catogories">
+                <h1>Catogories</h1>
+                <div class="types">
+                    <ul>
+                        <li><a href="Catogories.html?category=Electronics">Electronics</a></li>
+                        <li><a href="Catogories.html?category=TV'S%20and%20Appliances">TV'S and Appliances</a></li>
+                        <li><a href="Catogories.html?category=Mobiles">Mobiles</a></li>
+                        <li><a href="Catogories.html?category=Laptops">Laptops</a></li>
+                        <li><a href="Catogories.html?category=Baby%20and%20Kids">Baby & Kids</a></li>
+                        <li><a href="Catogories.html?category=Home%20and%20Furniture">Home and Furniture</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="products">
+                <div class="products_title">
+                    <h2>Products</h2>
+                </div>
+                <div class="prod_catag" id="prod_catag">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    let side_bar = document.getElementById("s_bar");
+    let text_cat = document.getElementById("te_cat");
+    function open_bar(){
+        side_bar.classList.toggle("open-bar");
+    }
+</script>
+<script src="index.js"></script>
+</html>

@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    padding: 1rem 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 0 10px 0 #000000;
+    background: linear-gradient(to right, white, rgb(34, 154, 240));
+}
+.menu{
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    font-size: 50px;
+    
+}
+.menu:hover{
+    cursor: pointer;
+}
+.nav-logo{
+    height: 90px;
+    margin-left: -50px;
+}
+.nav-img{
+    height:100%;
+}
+.nav-search input{
+    width: 500px;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid black;
+    background: transparent;
+    z-index: 111;
+    
+}
+.search{
+    background: transparent;
+    border: none;
+    font-size: 25px;
+    transform: translateY(7px) translateX(-30px);
+    z-index: 112;
+    cursor: pointer;
+}
+.nav-profile{
+    border-radius: 50%;
+    height: 50px;
+    margin-right: -100px;
+    display: flex;
+}
+.pro_img{
+    border-radius: 50%;
+    height: 100%;
+    margin-right: 30px;
+}
+.pro_img:hover{
+    cursor: pointer;
+}
+.notify{
+    font-size: 50px;
+    margin-right: 30px;
+    color: black;
+}
+.notify:hover{
+    cursor: pointer;
+}
+section{
+    display: flex;
+    width: 100vw;
+    position: relative;
+    z-index: 1;
+}
+.side-bar{
+    min-height: 100vh;
+    position: relative;
+    background: linear-gradient(to top, white, rgb(34, 154, 240));
+    box-shadow: 0 0 10px 0 #000000;
+    width: 300px;
+    transition: 0.3s ease-in-out 0.3s;
+    margin-top: 20px;
+    padding: 100px 10px 30px 10px;
+    overflow: hidden;
+}
+.catag_1{
+    width: 250px;
+    height: 70px;
+    overflow: hidden;
+}
+.open-bar{
+    width: 60px;
+}
+.side-bar a{
+    font-size: 18px;
+    color: black;
+}
+.side-bar a i{
+    font-size: 45px;
+    transform: translateY(11px);
+    margin-right: 5px;
+}
+.catag_1:hover{
+    background-color: #ededed;
+    color: black;
+}
+.home-content{
+    height: calc(100vh - 70px);
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 60px;
+    padding: 40px 30px 30px 30px;
+}
+.home-img{
+    background-image: url("https://w0.peakpx.com/wallpaper/1021/552/HD-wallpaper-simple-abstract-pattern-textures-design.jpg");
+    background-size: cover;
+    position: relative;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-img h1{
+    color: black;
+    font-size: 90px;
+}
+.home-catogories{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px 0 #000000;
+    padding: 10px;
+}
+.home-catogories h1{
+    color: rgb(34, 154, 240);
+    font-size: 30px;
+    border-bottom: 2px solid rgb(34, 154, 240);
+    
+}
+.types{
+    overflow: hidden;
+}
+.types ul{
+    list-style-type: none;
+}
+.types ul li a{
+    color: black;
+}
+.types ul li{
+    list-style-type: none;
+    font-size: 30px;
+    margin-top: 10px;
+    height: 60px;
+    padding-left: 20px;
+    transition: 0.3s ease-in-out 0.3s;
+}
+.types ul li:hover{
+    background-color: #ededed;
+    transform: translateX(20px);
+    color: rgb(34, 154, 240);
+    cursor: pointer;
+}
+.h_pro{
+    font-size: 100px;
+}
+.products{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+}
+.products_title h2{
+    font-size: 30px;
+    border-bottom: 2px solid rgb(34, 154, 240);
+
+}
+.prod{
+    margin-top: 6px;
+    display: flex;
+    gap: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 0 #000000;
+}
+.prod_image{
+    height: 225px;
+    width: 225px;
+}
+.prod_name h2{
+    padding: 10px 10px 10px 0;
+    font-size: 23px;
+}
+.prod_discr p{
+    font-size: 15px;
+}
+.stars i{
+    color: gold;
+    font-size: 15px;
+}
+.prod-price{
+    font-size: 20px;
+}
+.prod_deliv{
+    margin-top: 10px;
+    font-size: 15px;
+}
+.prod_deliv p i{
+    font-size: 18px;
+}

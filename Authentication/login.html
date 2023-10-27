@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+    <link rel="stylesheet" href="Login.css" class="css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<title>Authentication</title>
+</head>
+<body>
+    <header>
+        <div class="nav-logo">
+            <img src="404! Shop not found-logos_transparent.png" height="90px">
+        </div>
+        <div class="nav-tags">
+            <div class="nav-search">
+                <a class="login1-button">Login</a>
+                <input type="search" id="search" placeholder="Search">
+                <button class="search"><i class='bx bx-search-alt-2'></i></button>
+            </div>
+            <div class="nav-anchors">
+                <a href="#">Electronics</a>
+                <a href="#">TV's & Appliances</a>
+                <a href="#">Men</a>
+                <a href="#">Women</a>
+                <a href="#">Baby & Kids</a>
+                <a href="#">Home & Furniture</a>
+                <a href="#">Sports, Books & More</a>
+                <a href="#">Offer Zone</a>
+            </div>
+        </div> 
+    </header>
+    <section id="login1" class="login1">
+        <div class="login-form">
+            <div class="login-content">
+                <div class="content-img">
+                    <img src="online-stores-300x216-removebg-preview.png" height="260px">
+                </div>
+                <div class="wrapper">
+                    <div class="static-txt">Explore </div>
+                    <ul class="dynamic-txt">
+                        <li><span>Electronics</span></li>
+                        <li><span>TV's & Appliances</span></li>
+                        <li><span>Men</span></li>
+                        <li><span>Women</span></li>
+                        <li><span>Baby & Kids</span></li>
+                        <li><span>Home & Furniture</span></li>
+                        <li><span>Sports, Books</span></li>
+                        <li><span>Offer Zone</span></li>
+                    </ul>
+                </div>
+                <div class="content-2">
+                    <p>Experience seamless shopping with a wide range of trendy and timeless items, tailored for your every need.</p>
+                    
+                </div>
+            </div>
+            <div class="form">
+                <form>
+                   <div class="form-heading">
+                       <h1>LOGIN</h1>
+                   </div>
+                   <div class="inputs form-email">
+                       <label><i class='bx bx-envelope'></i></label>
+                       <input type="text" name="login_email" id="login_email" class="form-control" placeholder="Enter your email">
+                   </div>
+                   <div class="inputs form-password">
+                    <label><i class='bx bx-lock-alt' ></i></label>
+                    <input type="password" name="login_password" id="login_password" class="form-control"  placeholder="Enter your password">
+                   </div>
+                   <div class="forgot-password">
+                    <a type="button" onclick="openPopUp()" class="form-fp" id="form-fp1">Forgot Passowrd..?</a>
+                   </div>
+                   <div class="buttons-div">
+                    <div class="buttons form-login">
+                        <a type="button" id="login" name="login">Login</a>
+                     </div>
+                     <div class="buttons form-login">
+                        <a href="./SignUp.html" type="button" id="login" name="login">Sign Up</a>
+                     </div>
+                   </div>
+                </form>
+            </div>
+        </div>
+        <div class="popup" id="popup">
+            <h3>Reset Password</h3>
+            <a type="button" onclick="closePopUp()" class="close"><i class="bx bx-x"></i></a>
+            <input type="email" name="fp_email" id="fp_email" placeholder="Enter your Email">
+            <div class="buttons fp-button">
+                <a type="button" class="buttons" id="fp1">Reset</a>
+            </div>
+        </div>
+    </section>
+</body>
+	<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+    import { getAuth, sendPasswordResetEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+    
+    const firebaseConfig = {
+    apiKey: "AIzaSyCH_CMHghSvkqTtIZvt_1MEWPlaHWSSNSU",
+    authDomain: "rvu-inhouse-project.firebaseapp.com",
+    databaseURL: "https://rvu-inhouse-project-default-rtdb.firebaseio.com",
+    projectId: "rvu-inhouse-project",
+    storageBucket: "rvu-inhouse-project.appspot.com",
+    messagingSenderId: "293811528567",
+    appId: "1:293811528567:web:9a11cbead2d840b765b772",
+    measurementId: "G-B4R015QNZC"
+    };
+
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+	  const auth = getAuth();
+	  console.log(app);
+
+	  document.getElementById("login").addEventListener("click", function() {
+		  var email =  document.getElementById("login_email").value;
+		  var password = document.getElementById("login_password").value;
+
+		  signInWithEmailAndPassword(auth, email, password)
+		  .then((userCredential) => {
+		    const user = userCredential.user;
+		    console.log(user);
+		    alert(user.email+" Login successfull!!!");
+            window.location.href = "../online_store/public/index.html";
+		  })
+		  .catch((error) => {
+		    const errorCode = error.code;
+		    const errorMessage = error.message;
+		    console.log(errorMessage);
+		    alert(errorMessage);
+		  });		  		  
+	  });
+      
+      document.getElementById("fp1").addEventListener("click", function(){
+        var email1 = document.getElementById("fp_email").value;
+
+        sendPasswordResetEmail(auth, email1)
+        .then(()=>{
+            alert("Password reset Email sent successfullyy!!")
+        })
+        .catch(error => {
+            alert(error)
+        })
+      })
+
+	</script>
+    <script>
+        let popup = document.getElementById("popup");
+        function openPopUp(){
+            popup.classList.add("open-popup");
+        }
+        function closePopUp(){
+            popup.classList.remove("open-popup");
+        }
+
+    </script>
+</html>

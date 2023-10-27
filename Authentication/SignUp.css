@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 110px;
+    padding: 1.5rem 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 0 10px 0 #000000;
+    background: linear-gradient(to right, white, rgb(34, 154, 240));
+}
+.nav-tags{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.nav-search{
+    margin-bottom: 30px;
+
+}
+.nav-search input{
+    width: 500px;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid black;
+    background: transparent;
+    z-index: 111;
+    
+}
+.search{
+    background: transparent;
+    border: none;
+    font-size: 25px;
+    transform: translateY(7px) translateX(-30px);
+    z-index: 112;
+    cursor: pointer;
+}
+
+.login1-button{
+    
+    width: 120px;
+    height: 30px;
+    transform: translateY(3px);
+    color: rgb(53, 193, 244);
+    font-weight: bolder;
+    font-size: 15px;
+    margin-right: 40px;
+}
+
+.nav-tags a{
+    padding: 5px 5px;
+    margin: 0 10px;
+    color: black;
+    font-size: 15px;
+    transition: all 0.5s;
+    text-decoration: none;
+}
+section{
+    position: fixed;
+    padding-top: 112px;
+    min-height: 100vh;
+    width: 100%;
+}
+.SignUp-form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    
+}
+.SignUp-content{
+    width: 55%;
+    height: 600px;
+    background-color: #e6f2ff;
+    position: relative;
+    overflow: hidden;
+
+}
+.content-img{
+    position: absolute;
+    top: 50px;
+    left: 230px;
+    
+}
+.wrapper{
+    display: inline-flex;
+    position: relative;
+    top: 350px;
+    left: 50px
+}
+.wrapper .static-txt{
+    font-size: 60px;
+    color: black;
+    font-weight: 400;
+}
+.wrapper .dynamic-txt{
+    margin-left: 15px;
+    line-height: 90px;
+    height: 90px;
+    overflow: hidden;
+    
+}
+.dynamic-txt li{
+    list-style: none;
+    font-size: 60px;
+    font-weight: 500; 
+    position: relative;
+    top: 0;  
+    animation: slide 16s steps(8) infinite;
+}
+@keyframes slide{
+    100%{
+        top: -720px;
+    }
+}
+.dynamic-txt li span{
+    position: relative;
+    color: rgb(34, 154, 240);
+}
+.dynamic-txt li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #e6f2ff;
+    border-left: 2px solid;
+    animation: typing 2s steps(21) infinite;
+}
+@keyframes typing{
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
+
+.content-2{
+    position: relative;
+    top: 360px;
+    left: 50px;
+    color: black;
+    font-size: 25px;
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    background-color: #e6f2ff;
+    justify-content: center;
+    width: 45%;
+}
+.form form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 530px;
+    height: 300px;
+    background-color: white;
+    box-shadow: 0 0 10px 0 grey;
+    border-radius: 10px;
+}
+.form-heading{
+    font-size: 18px;
+    color: rgb(34, 154, 240);
+}
+.inputs{
+    width: 400px;
+    margin-top: 30px;
+    height: 30px;
+}
+.buttons{
+    margin-top: 60px
+}
+.buttons a{
+    text-decoration: none;
+    padding: 10px;
+    border: 2px solid rgb(34, 154, 240);
+    width: 400px;
+    color: black;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.5s;
+    background-color: white;
+}
+.buttons a:hover{
+    background-color: rgb(34, 154, 240);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(9, 0, 0, 0.3);
+    cursor: pointer;
+}
+.inputs label{
+    font-size: 20px;
+    transform: translateY(-7px);
+    margin-right: 5px;
+}
+.inputs input{
+    width: 370px;
+    border: none;
+    border-bottom: 2px solid black;
+}
+

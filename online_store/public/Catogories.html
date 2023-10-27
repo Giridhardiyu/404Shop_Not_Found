@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catogory</title>
+    <link rel="stylesheet" href="Catogories.css" class="css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <a type="button" onclick="open_bar()" id="menu1"><i class='bx bx-menu'></i></a>
+        </div>
+        <div class="nav-logo">
+            <img src="../../Authentication/404! Shop not found-logos_transparent.png" alt="logo" class="nav-img">
+        </div>
+        <div class="nav-search">
+            <input type="search" placeholder="Search" id="h_search" name="search" class="h_search">
+            <button class="search"><i class='bx bx-search-alt-2'></i></button>
+        </div>
+        <div class="nav-profile">
+            <i class='bx bxs-bell notify'></i>
+            <img src="./profile-removebg-preview.png" alt="profile" class="pro_img">
+        </div>
+    </header>
+    <section class="home">
+        <div class="side-bar" id="s_bar">
+            <div class="catag_1">
+                <a href="#"><i class='bx bxl-product-hunt' ></i>Product Catalogue</a>
+            </div>
+            <div class="catag_1">
+                <a href="#"><i class='bx bxs-exit' ></i>Sign Out</a>
+            </div>
+        </div>
+        <div class="home-content">
+            <div class="products_title">
+                <h2 id="cat_Name">Catogory</h2>
+                <a type="button" onclick="open_form()">Add Product</a>
+            </div>
+            <div class="prod_catag" id="prod_catag">
+                
+            </div>
+            <div class="add_form" id="add_form">
+                <div class="form_title">
+                    <h3>Add Product</h3>
+                    <a type="button" onclick="clos_form()"><i class='bx bx-x'></i></a>
+                </div>
+                <form class="form">
+                    <div class="div-container">
+                        <div class="grid1 img_label">
+                            <label for="pro_img">Product Image</label>
+                        </div>
+                        <div class="grid1 img_input">
+                            <input type="text" placeholder="Enter the image link" id="pro_img" name="productImage">
+                        </div>
+                        <div class="grid1 name_label">
+                            <label for="pro_name">Product Name</label>
+                        </div>
+                        <div class="grid1 name_input">
+                            <input type="text" placeholder="Enter the name of the product" id="pro_name" name="productName">
+                        </div>
+                        <div class="grid1 price_label">
+                            <label for="pro_price">Product Price</label>
+                        </div>
+                        <div class="grid1 price_input">
+                            <input type="number" placeholder="Enter the price of the product" id="pro_price" name="productPrice">
+                        </div>
+                        <div class="grid1 descri_label">
+                            <label for="pro_desc">Product description</label>
+                        </div>
+                        <div class="grid1 descri_input">
+                            <textarea class="product-description" placeholder="Enter the description of the product" id="pro_desc" name="productDescription"></textarea>
+                        </div>
+                    </div>
+                    <div class="form_submit">
+                        <button type="submit">Add</button>
+                    </div>
+                </form>
+                
+            </div>
+            <div class="update_form" id="update_form">
+                <div class="form_title">
+                    <h3>Update Product</h3>
+                    <a type="button" onclick="clos_upd_form()"><i class='bx bx-x'></i></a>
+                </div>
+                <form class="form1">
+                    <div class="div-container">
+                        <div class="grid1 img_label">
+                            <label for="pro_img">Product Image</label>
+                        </div>
+                        <div class="grid1 img_input">
+                            <input type="text" placeholder="Enter the image link" id="pro_img" name="productImage">
+                        </div>
+                        <div class="grid1 name_label">
+                            <label for="pro_name">Product Name</label>
+                        </div>
+                        <div class="grid1 name_input">
+                            <input type="text" placeholder="Enter the name of the product" id="pro_name" name="productName">
+                        </div>
+                        <div class="grid1 price_label">
+                            <label for="pro_price">Product Price</label>
+                        </div>
+                        <div class="grid1 price_input">
+                            <input type="number" placeholder="Enter the price of the product" id="pro_price" name="productPrice">
+                        </div>
+                        <div class="grid1 descri_label">
+                            <label for="pro_desc">Product description</label>
+                        </div>
+                        <div class="grid1 descri_input">
+                            <textarea class="product-description" placeholder="Enter the description of the product" id="pro_desc" name="productDescription"></textarea>
+                        </div>
+                    </div>
+                    <div class="form_submit">
+                        <button type="submit">Update</button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    let side_bar = document.getElementById("s_bar");
+    let text_cat = document.getElementById("te_cat");
+    function open_bar(){
+        side_bar.classList.toggle("open-bar");
+    }
+    let close_form = document.getElementById("add_form");
+    function open_form(){
+        close_form.classList.add("op_form");
+    }
+    function clos_form(){
+        close_form.classList.remove("op_form");
+    }
+    let update_form = document.getElementById("update_form");
+    function update_pro(){
+        update_form.classList.add("close_update_form");
+        const id1 = event.target.id;
+        document.querySelector(".form1").id = id1;
+    }
+    function clos_upd_form(){
+        update_form.classList.remove("close_update_form");
+    }
+</script>
+<script>
+    const formE1 = document.querySelector('.form');
+    formE1.addEventListener('submit', event =>{
+        event.preventDefault();
+        const formData = new FormData(formE1);
+        const data = Object.fromEntries(formData);
+
+        var params = new URLSearchParams(window.location.search);
+        var categoryName = params.get('category');
+        data.productCategory = categoryName;
+
+        fetch('http://localhost:3000/products/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(res=> res.json())
+          .then(data => alert("Product added successfully!!!"))
+          .catch(error => alert("There was a problem adding the product...\nPlease try again...!!!"))
+    })
+
+    const formE2 = document.querySelector('.form1');
+    formE2.addEventListener('submit', event => {
+        event.preventDefault();
+        const formData = new FormData(formE2);
+        const data = Object.fromEntries(formData);
+
+        var id2 = document.querySelector(".form1").id;
+
+        fetch(`http://localhost:3000/products/${id2}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(res=> res.json())
+          .then(data => alert("Product updated successfully!!!"))
+          .catch(error => alert("There was a problem updating the product...\nPlease try again...!!!"))
+    })
+</script>
+<script>
+    function delete_pro(){
+        const id = event.target.id;
+        fetch(`http://localhost:3000/products/${id}`, {
+            method: 'DELETE'
+        }).then(data => alert("Product deleted successfully"))
+          .catch(error => console.log(error))
+    }
+</script>
+<script>
+
+</script>
+
+<script src="category.js"></script>
+</html>
